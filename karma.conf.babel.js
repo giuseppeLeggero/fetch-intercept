@@ -20,7 +20,10 @@ export default function (config) {
     reporters: ['progress', 'coverage'],
 
     client: {
-      captureConsole: true
+      captureConsole: true,
+      mocha: {
+        timeout: 20000 // 20 seconds
+      }
     },
 
     customLaunchers: {

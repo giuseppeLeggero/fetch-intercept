@@ -27,17 +27,17 @@ const unregister = fetchIntercept.register({
         return [url, config];
     },
 
-    requestError: function (error) {
+    requestError: function (error, config) {
         // Called when an error occurred during another 'request' interceptor call
         return Promise.reject(error);
     },
 
-    response: function (response) {
+    response: function (response, config) {
         // Modify the response object
         return response;
     },
 
-    responseError: function (error) {
+    responseError: function (error, config) {
         // Handle an fetch error
         return Promise.reject(error);
     }

@@ -1,5 +1,10 @@
 # Version 2.2.3
 
+ * Add config on response
+
+
+# Version 2.2.3
+
  * Reverted #8 cause it leads to incorrect environment detection when webpack is used #9
 
 # Version 2.2.2

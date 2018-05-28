@@ -20,14 +20,14 @@ describe('fetch-intercept', function () {
       }
     });
 
-    fetch('http://google.de', {
+    fetch('https://www.google.de', {
       mode: 'no-cors'
     })
-    .then(function () {
-      expect(requestIntercepted).toBe(true);
-      expect(responseIntercepted).toBe(true);
-      done();
-    });
+      .then(function () {
+        expect(requestIntercepted).toBe(true);
+        expect(responseIntercepted).toBe(true);
+        done();
+      });
   });
 
   it('should intercept response errors', function (done) {
@@ -43,10 +43,10 @@ describe('fetch-intercept', function () {
     fetch('http://404', {
       mode: 'no-cors'
     })
-    .catch(function () {
-      expect(responseIntercepted).toBe(true);
-      done();
-    });
+      .catch(function () {
+        expect(responseIntercepted).toBe(true);
+        done();
+      });
   });
 
   it('should intercept request interception errors', function (done) {
@@ -65,13 +65,13 @@ describe('fetch-intercept', function () {
       }
     });
 
-    fetch('http://google.com', {
+    fetch('https://www.google.it', {
       mode: 'no-cors'
     })
-    .catch(function () {
-      expect(requestIntercepted).toBe(true);
-      done();
-    });
+      .catch(function () {
+        expect(requestIntercepted).toBe(true);
+        done();
+      });
   });
 
   it('should unregister a registered interceptor', function (done) {
@@ -86,12 +86,12 @@ describe('fetch-intercept', function () {
 
     unregister();
 
-    fetch('http://google.de', {
+    fetch('https://www.google.it', {
       mode: 'no-cors'
     })
-    .then(function () {
-      expect(requestIntercepted).toBe(false);
-      done();
-    });
+      .then(function () {
+        expect(requestIntercepted).toBe(false);
+        done();
+      });
   });
 });
